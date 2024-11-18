@@ -3,19 +3,12 @@ package graph;
 /**
  * An immutable class representing a weighted directed edge between two vertices in a graph.
  */
-public class Edge {
-    private final String from;
-    private final String to;
+class Edge<L> {
+    private final L from;
+    private final L to;
     private final int weight;
 
-    /**
-     * Constructs an edge from a source vertex to a target vertex with a specified weight.
-     * 
-     * @param from the source vertex
-     * @param to the target vertex
-     * @param weight the weight of the edge
-     */
-    public Edge(String from, String to, int weight) {
+    public Edge(L from, L to, int weight) {
         this.from = from;
         this.to = to;
         this.weight = weight;
@@ -28,9 +21,9 @@ public class Edge {
         assert weight > 0 : "weight must be positive";
     }
 
-    public String from() { return from; }
+    public L from() { return from; }
 
-    public String to() { return to; }
+    public L to() { return to; }
 
     public int weight() { return weight; }
 
